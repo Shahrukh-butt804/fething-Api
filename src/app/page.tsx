@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Product {
   id: number;
@@ -37,7 +38,7 @@ export default function ProductList() {
 
       <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-5">
         {data.map((val) => (
-          <a key={val.id} href="#" className="group block">
+          <Link href={`/product/`+ val.id} key={val.id}  className="group block">
             <div className="w-60 m-5 hover:scale-105 hover:shadow-lg p-2">
               <Image
                 src={val.image}
@@ -61,7 +62,7 @@ export default function ProductList() {
                 </p>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
     </>
