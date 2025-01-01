@@ -33,7 +33,7 @@ export default function ProductList() {
   return (
     <>
       <h1 className="text-center text-3xl font-semibold uppercase my-6">
-        Fetching API
+        Assignment 7
       </h1>
 
       <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-5">
