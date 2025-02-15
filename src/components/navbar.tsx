@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const Navbar: React.FC = () => {
@@ -24,12 +25,8 @@ const Navbar: React.FC = () => {
                         <div className="md:flex md:items-center md:gap-12">
                             <nav aria-label="Global" className="hidden md:block">
                                 <ul className="flex items-center gap-6 text-sm">
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">About</a></li>
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">Careers</a></li>
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a></li>
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a></li>
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a></li>
-                                    <li><a className="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a></li>
+                                    <li><Link href={"/"} className="text-gray-500 transition hover:text-gray-500/75" >client</Link></li>
+                                    <li><Link href={"/serverComp"} className="text-gray-500 transition hover:text-gray-500/75" >server</Link></li>
                                 </ul>
                             </nav>
 
