@@ -17,7 +17,12 @@ export default function ProductList() {
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Failed to fetch products');
+        }
+        return res.json();
+      })
       .then((data: Product[]) => setData(data))
       .catch((error) => console.error(error));
   }, []);
@@ -38,7 +43,7 @@ export default function ProductList() {
 
       <div className="flex flex-col md:flex-row md:flex-wrap justify-center items-center gap-5">
         {data.map((val) => (
-          <Link href={`/product/`+ val.id} key={val.id}  className="group block">
+          <Link href={`/product/${val.id}`} key={val.id} className="group block">
             <div className="w-60 m-5 hover:scale-105 hover:shadow-lg p-2">
               <Image
                 src={val.image}
